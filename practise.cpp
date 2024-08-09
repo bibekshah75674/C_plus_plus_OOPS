@@ -1,32 +1,22 @@
 #include<iostream>
 using namespace std;
 
-class Employee{
-    private:
-        int a,b,c;
+class complex{
+    int a,b;
     public:
-        int d,e;
-    void setData(int a1,int b1,int c1);
-    void getData(){
-        cout<<"The value of a is "<<a<<endl;
-        cout<<"The value of b is "<<b<<endl;
-        cout<<"The value of c is "<<c<<endl;
-        cout<<"The value of d is "<<d<<endl;
-        cout<<"The value of e is "<<e<<endl;
+    complex(void); //constructor declaration
+    void printNumber(){
+        cout<<"Your complex number is "<<a<<"+"<<b<<"i"<<endl;
     }
 };
 
-void Employee :: setData(int a1,int b1,int c1){
-    a = a1;
-    b = b1;
-    c = c1;
+complex :: complex(void){
+    a = 44;
+    b = 45;
 }
 
 int main(){
-    Employee bibek;
-    bibek.d = 63;
-    bibek.e = 45;
-    bibek.setData(12,3453,342);
-    bibek.getData();
+    complex c1;
+    c1.printNumber();
     return 0;
 }
