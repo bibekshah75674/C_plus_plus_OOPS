@@ -14,12 +14,10 @@ class point{
 };
 
 int main(){
-    //implicit call
     point p(1,2);
     p.displayPoint();
 
-    //explicit call
-    point q = point(3,4);
+    point q(2,3);
     q.displayPoint();
     
     return 0;
