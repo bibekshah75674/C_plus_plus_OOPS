@@ -1,26 +1,25 @@
 #include<iostream>
 using namespace std;
 
-class point{
-    int x,y;
+class base{
+    int data1;
     public:
-        point(int a,int b){
-            x = a;
-            y = b;
-        }
-        void displayPoint(){
-            cout<<"The point is ("<<x<<","<<y<<")"<<endl;
-        }
+        void setData();
+        int getData1();
 };
 
-int main(){
-    //implicit call
-    point p(1,2);
-    p.displayPoint();
+void base :: setData(){
+    data1 = 3;
+}
 
-    //explicit call
-    point q = point(3,4);
-    q.displayPoint();
+int base :: getData1(){
+    return data1;
+}
+
+int main(){
+    base b1;
+    b1.setData();
+    cout<<b1.getData1();
     
     return 0;
 }
