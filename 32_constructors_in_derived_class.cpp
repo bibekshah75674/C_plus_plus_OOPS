@@ -1,6 +1,22 @@
-//constructor in derived class
 #include<iostream>
 using namespace std;
+/*
+case 1:
+class B:public A
+{
+    //order of execution of constructor -> first A() then B()
+};
+
+case 2:
+class A:public B,public C{
+    //order of execution of constructor -> B() then C() and A()
+};
+
+case 3:
+class A : public B, virtual public C{
+    //order of execution of constructor -> C() then B() and A()
+};
+*/
 
 class Base1{
     int data1;
@@ -26,15 +42,15 @@ class Base2{
         }
 };
 
-class Derived : public Base1,public Base2{
+class Derived : public Base1, public Base2{
     int data3,data4;
     public:
-            Derived(int a,int b,int c,int d) : Base1(a),Base2(b){
+        Derived(int a,int b,int c,int d):Base1(a),Base2(b){
             data3 = c;
-            data4 = d;
-            cout<<"Derived class constructor called."<<endl;
+            data4 = d;  
+            cout<<"Derived class constructor called"<<endl;
         }
-        void displayRemData(){
+        void printRemData(){
             cout<<"The value of data3 is "<<data3<<endl;
             cout<<"The value of data4 is "<<data4<<endl;
         }
@@ -44,8 +60,8 @@ int main(){
     Derived obj1(1,2,3,4);
     obj1.printData1();
     obj1.printData2();
-    obj1.displayRemData();
-
+    obj1.printRemData();
     
     return 0;
 }
+
